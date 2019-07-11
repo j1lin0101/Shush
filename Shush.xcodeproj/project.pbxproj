@@ -14,7 +14,7 @@
 		3F38FD9322D652F70099605D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F38FD9122D652F70099605D /* LaunchScreen.storyboard */; };
 		3F38FD9E22D652F70099605D /* ShushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F38FD9D22D652F70099605D /* ShushTests.swift */; };
 		3F38FDA922D652F70099605D /* ShushUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F38FDA822D652F70099605D /* ShushUITests.swift */; };
-		F3F7A685BC7540797E0267F0 /* libPods-Shush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4404B078203D364A1D1438F /* libPods-Shush.a */; };
+		CDA6B4067CFBE9815A5768A3 /* libPods-Shush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B0F136DE61FCA9C32FCF37 /* libPods-Shush.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		324B42B568D5B5177944E7EC /* Pods-Shush.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shush.release.xcconfig"; path = "Target Support Files/Pods-Shush/Pods-Shush.release.xcconfig"; sourceTree = "<group>"; };
 		3F38FD8522D652F50099605D /* Shush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F38FD8822D652F50099605D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F38FD8A22D652F50099605D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,8 +48,13 @@
 		3F38FDA422D652F70099605D /* ShushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShushUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F38FDA822D652F70099605D /* ShushUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShushUITests.swift; sourceTree = "<group>"; };
 		3F38FDAA22D652F70099605D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		682C3C1BA360A0253596CCAF /* Pods-Shush.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shush.debug.xcconfig"; path = "Target Support Files/Pods-Shush/Pods-Shush.debug.xcconfig"; sourceTree = "<group>"; };
-		E4404B078203D364A1D1438F /* libPods-Shush.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shush.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FF8601022D79C5900921885 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3FF8601122D79C5900921885 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		3FF8601222D79C5900921885 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		3FF8601322D79C5900921885 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		55B816E246A59C2790F0D93E /* Pods-Shush.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shush.release.xcconfig"; path = "Target Support Files/Pods-Shush/Pods-Shush.release.xcconfig"; sourceTree = "<group>"; };
+		61A51EC2EE42F413150A7D70 /* Pods-Shush.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shush.debug.xcconfig"; path = "Target Support Files/Pods-Shush/Pods-Shush.debug.xcconfig"; sourceTree = "<group>"; };
+		85B0F136DE61FCA9C32FCF37 /* libPods-Shush.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shush.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F7A685BC7540797E0267F0 /* libPods-Shush.a in Frameworks */,
+				CDA6B4067CFBE9815A5768A3 /* libPods-Shush.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +91,7 @@
 				3F38FDA722D652F70099605D /* ShushUITests */,
 				3F38FD8622D652F50099605D /* Products */,
 				4D802E0AC7ED19D0AD8B5DF3 /* Pods */,
-				72746F42ACA7158550BE487A /* Frameworks */,
+				3FF8600F22D79C5900921885 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,21 +136,25 @@
 			path = ShushUITests;
 			sourceTree = "<group>";
 		};
+		3FF8600F22D79C5900921885 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FF8601022D79C5900921885 /* AudioToolbox.framework */,
+				3FF8601222D79C5900921885 /* AudioUnit.framework */,
+				3FF8601122D79C5900921885 /* CoreAudio.framework */,
+				3FF8601322D79C5900921885 /* CoreAudioKit.framework */,
+				85B0F136DE61FCA9C32FCF37 /* libPods-Shush.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4D802E0AC7ED19D0AD8B5DF3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				682C3C1BA360A0253596CCAF /* Pods-Shush.debug.xcconfig */,
-				324B42B568D5B5177944E7EC /* Pods-Shush.release.xcconfig */,
+				61A51EC2EE42F413150A7D70 /* Pods-Shush.debug.xcconfig */,
+				55B816E246A59C2790F0D93E /* Pods-Shush.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		72746F42ACA7158550BE487A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E4404B078203D364A1D1438F /* libPods-Shush.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F38FDAD22D652F70099605D /* Build configuration list for PBXNativeTarget "Shush" */;
 			buildPhases = (
-				59632DA0621DFA18D1F68817 /* [CP] Check Pods Manifest.lock */,
+				EF90256580441FA0E83A19B2 /* [CP] Check Pods Manifest.lock */,
 				3F38FD8122D652F50099605D /* Sources */,
 				3F38FD8222D652F50099605D /* Frameworks */,
 				3F38FD8322D652F50099605D /* Resources */,
@@ -277,7 +285,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		59632DA0621DFA18D1F68817 /* [CP] Check Pods Manifest.lock */ = {
+		EF90256580441FA0E83A19B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -480,7 +488,7 @@
 		};
 		3F38FDAE22D652F70099605D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 682C3C1BA360A0253596CCAF /* Pods-Shush.debug.xcconfig */;
+			baseConfigurationReference = 61A51EC2EE42F413150A7D70 /* Pods-Shush.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -499,7 +507,7 @@
 		};
 		3F38FDAF22D652F70099605D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 324B42B568D5B5177944E7EC /* Pods-Shush.release.xcconfig */;
+			baseConfigurationReference = 55B816E246A59C2790F0D93E /* Pods-Shush.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
