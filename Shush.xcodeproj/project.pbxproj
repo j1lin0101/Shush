@@ -14,6 +14,7 @@
 		3F38FD9322D652F70099605D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F38FD9122D652F70099605D /* LaunchScreen.storyboard */; };
 		3F38FD9E22D652F70099605D /* ShushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F38FD9D22D652F70099605D /* ShushTests.swift */; };
 		3F38FDA922D652F70099605D /* ShushUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F38FDA822D652F70099605D /* ShushUITests.swift */; };
+		F3F7A685BC7540797E0267F0 /* libPods-Shush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4404B078203D364A1D1438F /* libPods-Shush.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		324B42B568D5B5177944E7EC /* Pods-Shush.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shush.release.xcconfig"; path = "Target Support Files/Pods-Shush/Pods-Shush.release.xcconfig"; sourceTree = "<group>"; };
 		3F38FD8522D652F50099605D /* Shush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F38FD8822D652F50099605D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F38FD8A22D652F50099605D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		3F38FDA422D652F70099605D /* ShushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShushUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F38FDA822D652F70099605D /* ShushUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShushUITests.swift; sourceTree = "<group>"; };
 		3F38FDAA22D652F70099605D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		682C3C1BA360A0253596CCAF /* Pods-Shush.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shush.debug.xcconfig"; path = "Target Support Files/Pods-Shush/Pods-Shush.debug.xcconfig"; sourceTree = "<group>"; };
+		E4404B078203D364A1D1438F /* libPods-Shush.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shush.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F7A685BC7540797E0267F0 /* libPods-Shush.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 				3F38FD9C22D652F70099605D /* ShushTests */,
 				3F38FDA722D652F70099605D /* ShushUITests */,
 				3F38FD8622D652F50099605D /* Products */,
+				4D802E0AC7ED19D0AD8B5DF3 /* Pods */,
+				72746F42ACA7158550BE487A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = ShushUITests;
 			sourceTree = "<group>";
 		};
+		4D802E0AC7ED19D0AD8B5DF3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				682C3C1BA360A0253596CCAF /* Pods-Shush.debug.xcconfig */,
+				324B42B568D5B5177944E7EC /* Pods-Shush.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		72746F42ACA7158550BE487A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4404B078203D364A1D1438F /* libPods-Shush.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +156,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F38FDAD22D652F70099605D /* Build configuration list for PBXNativeTarget "Shush" */;
 			buildPhases = (
+				59632DA0621DFA18D1F68817 /* [CP] Check Pods Manifest.lock */,
 				3F38FD8122D652F50099605D /* Sources */,
 				3F38FD8222D652F50099605D /* Frameworks */,
 				3F38FD8322D652F50099605D /* Resources */,
@@ -250,6 +275,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		59632DA0621DFA18D1F68817 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Shush-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F38FD8122D652F50099605D /* Sources */ = {
@@ -430,9 +480,11 @@
 		};
 		3F38FDAE22D652F70099605D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682C3C1BA360A0253596CCAF /* Pods-Shush.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V3842HRTVR;
 				INFOPLIST_FILE = Shush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,9 +499,11 @@
 		};
 		3F38FDAF22D652F70099605D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 324B42B568D5B5177944E7EC /* Pods-Shush.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V3842HRTVR;
 				INFOPLIST_FILE = Shush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
