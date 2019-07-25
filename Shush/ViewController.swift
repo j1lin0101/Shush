@@ -1,37 +1,19 @@
 import AudioKit
 import AudioKitUI
 import UIKit
-import AVFoundation
+//import AVFoundation
 
 class ViewController: UIViewController {
     
-    @IBOutlet private var amplitudeLabel: UILabel!
-    @IBOutlet private var audioInputPlot: EZAudioPlot!
-    private let phone = "415-519-7276"
-    let utterance = AVSpeechUtterance(string: "You are loud")
-    let synthesizer = AVSpeechSynthesizer()
     
-        
+    
+    @IBOutlet private var amplitudeLabel: UILabel!
+    @IBOutlet weak var thresholdLabel: UILabel!
+    
     var mic: AKMicrophone!
     var tracker: AKFrequencyTracker!
     var silence: AKBooster!
-    
-    func setupPlot() {
-        let plot = AKNodeOutputPlot(mic, frame: audioInputPlot.bounds)
-        plot.translatesAutoresizingMaskIntoConstraints = false
-        plot.plotType = .rolling
-        plot.shouldFill = true
-        plot.shouldMirror = true
-        plot.color = UIColor.blue
-        audioInputPlot.addSubview(plot)
-        
-        // Pin the AKNodeOutputPlot to the audioInputPlot
-        var constraints = [plot.leadingAnchor.constraint(equalTo: audioInputPlot.leadingAnchor)]
-        constraints.append(plot.trailingAnchor.constraint(equalTo: audioInputPlot.trailingAnchor))
-        constraints.append(plot.topAnchor.constraint(equalTo: audioInputPlot.topAnchor))
-        constraints.append(plot.bottomAnchor.constraint(equalTo: audioInputPlot.bottomAnchor))
-        constraints.forEach { $0.isActive = true }
-    }
+    var threshold = 90
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +23,8 @@ class ViewController: UIViewController {
         tracker = AKFrequencyTracker(mic)
         silence = AKBooster(tracker, gain: 0)
         view.backgroundColor = .white
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
-        utterance.rate = 0.5
-        utterance.volume = 1.0
+        thresholdLabel.text = "Max threshold: " + String(threshold)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,7 +36,6 @@ class ViewController: UIViewController {
         } catch {
             AKLog("AudioKit did not start!")
         }
-        setupPlot()
         Timer.scheduledTimer(timeInterval: 0.4,
                              target: self,
                              selector: #selector(ViewController.updateUI),
@@ -67,17 +47,39 @@ class ViewController: UIViewController {
     @objc func updateUI() {
         let db = (10 * log(tracker.amplitude)) + 98
         
-        amplitudeLabel.text = String(format: "Amplitude: %0.1f", db)
-        if (db > 91) {
+        amplitudeLabel.text = String(format: "%0.1f", db)
+        if (Int(db) > threshold) {
             print("You Loud")
             view.backgroundColor = .red
-            synthesizer.speak(utterance)
+        } else if (db > (threshold - 15)) {
+            print("You Are Nearly Loud")
+            view.backgroundColor = .yellow
         } else {
-            view.backgroundColor = .white
+            view.backgroundColor = .green
         }
 
     }
 
+    @IBAction func adjustButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Adjust the sound threshold?", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Input the new amplitude..."
+            textField.keyboardType = UIKeyboardType.numberPad
+        })
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            
+            if let new = Int((alert.textFields?.first!.text)!) {
+                print(new)
+                self.threshold = new
+                self.thresholdLabel.text = "Max threshold: " + String(self.threshold)
+            }
+        }))
+        
+        self.present(alert, animated: true)
+    }
     
 }
 

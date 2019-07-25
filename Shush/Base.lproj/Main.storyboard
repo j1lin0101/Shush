@@ -18,25 +18,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQi-ea-61n">
-                                <rect key="frame" x="148.5" y="244" width="117" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQi-ea-61n">
+                                <rect key="frame" x="57" y="244" width="300" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFv-QC-7ND" customClass="EZAudioPlot">
-                                <rect key="frame" x="87" y="446" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cev-uQ-P4g">
+                                <rect key="frame" x="73" y="521" width="269" height="30"/>
+                                <state key="normal" title="Adjust Sound Threshold"/>
+                                <connections>
+                                    <action selector="adjustButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cWT-MH-aJ3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjo-R8-EsV">
+                                <rect key="frame" x="186" y="438" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xQi-ea-61n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="9vL-LR-Xny"/>
-                            <constraint firstItem="xQi-ea-61n" firstAttribute="centerX" secondItem="GFv-QC-7ND" secondAttribute="centerX" id="AoH-U8-nLu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GFv-QC-7ND" secondAttribute="bottom" constant="239" id="a46-wT-46p"/>
-                            <constraint firstItem="GFv-QC-7ND" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="jKn-kG-QtZ"/>
-                            <constraint firstItem="xQi-ea-61n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uDW-mx-sEs"/>
-                            <constraint firstItem="GFv-QC-7ND" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="446" id="wMZ-Iu-tb1"/>
+                            <constraint firstItem="xQi-ea-61n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="6dI-Vp-Zas"/>
+                            <constraint firstItem="cev-uQ-P4g" firstAttribute="top" secondItem="mjo-R8-EsV" secondAttribute="bottom" constant="62" id="Nte-ZV-BVe"/>
+                            <constraint firstItem="xQi-ea-61n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pg3-c3-vcn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cev-uQ-P4g" secondAttribute="bottom" constant="262" id="Xle-9P-ZFd"/>
+                            <constraint firstItem="xQi-ea-61n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="ckW-8c-evr"/>
+                            <constraint firstItem="xQi-ea-61n" firstAttribute="centerX" secondItem="mjo-R8-EsV" secondAttribute="centerX" id="j9u-be-hcH"/>
+                            <constraint firstItem="cev-uQ-P4g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="szI-W6-K99"/>
+                            <constraint firstItem="mjo-R8-EsV" firstAttribute="centerX" secondItem="cev-uQ-P4g" secondAttribute="centerX" id="tVK-en-Q1h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -44,7 +55,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="amplitudeLabel" destination="xQi-ea-61n" id="U1f-Tt-ej2"/>
-                        <outlet property="audioInputPlot" destination="GFv-QC-7ND" id="tR2-n2-KbA"/>
+                        <outlet property="thresholdLabel" destination="mjo-R8-EsV" id="SQ5-Eh-yKJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
